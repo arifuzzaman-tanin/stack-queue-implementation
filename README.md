@@ -67,7 +67,7 @@ class Queues {
     this.length = 1;
   }
 
-  push(value) {
+  enqueue(value) {
     const node = new Node(value);
     this.tail.next = node;
     this.tail = node;
@@ -75,7 +75,7 @@ class Queues {
     return this;
   }
 
-  pop() {
+  dequeue() {
     this.head = this.head.next;
     this.length--;
     return this;
@@ -95,13 +95,13 @@ class Queues {
 }
 
 const queues = new Queues(10);
-queues.push(20);
-queues.push(30);
-queues.push(40);
-queues.push(50);
-queues.push(60);
-queues.pop();
-queues.pop();
+queues.enqueue(20);
+queues.enqueue(30);
+queues.enqueue(40);
+queues.enqueue(50);
+queues.enqueue(60);
+queues.dequeue();
+queues.dequeue();
 queues.printQueues();
 console.log(queues);
 ```
