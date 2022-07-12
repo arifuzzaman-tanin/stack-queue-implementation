@@ -76,9 +76,11 @@ class Queues {
   }
 
   dequeue() {
-    this.head = this.head.next;
-    this.length--;
-    return this;
+    if (this.length != 0) {
+      this.head = this.head.next;
+      this.length--;
+      return this;
+    }
   }
 
   printQueues() {
